@@ -105,6 +105,7 @@ idf.py monitor | python ./python_utils/serial_append_time.py > my-experiment-fil
 Once data has been collected, we now wish to run analysis and (most likely) apply deep learning algorithms on the collected data. 
 Luckily, the output from the esp32 is a simple CSV file, thus we can pass the contents to any available CSV parser in our language of choice (Python, MATLAB, R, etc.). 
 The use of CSV was selected for its simplicity and small size when compared with the likes of XML or JSON.
+As you probably know, the CSI data should be a list of complex numbers but what you received is a list of integers. These integers contain both real and imaginary parts of your data. Assume you got 8 numbers as the list of CSI data. This list would be r1, i1, r2, i2, r3, i3, r4, i4. Which r shows the real part of the data and i shows the imaginary part. So, if you received 128 elements you have 64 complex numbers in the explained format.
 
 ## Advanced:
 
